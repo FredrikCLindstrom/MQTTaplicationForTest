@@ -1,43 +1,41 @@
 package packageOne;
 
 import javafx.application.Platform;
-import javafx.beans.property.StringProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+;
 
 public class MqttSubscribe {
-    @FXML Label labelOne;
+
     Controller controller;
-    public String messageString;
 
     public MqttSubscribe(Controller controller) {
         this.controller = controller;
     }
 
-    public void test() {
+    public void executeMQTTSubscribe() {
 
-        String topic        = "first";
-        String broker       = "tcp://test.mosquitto.org:1883";
-        String clientId     = "client1";
-        MemoryPersistence persistence = new MemoryPersistence();
+        String topicOne        = "messageOne"; //detta är topic som subscribern lyssnar på
+        String topicTwo        = "messageTwo"; //detta är topic som subscribern lyssnar på
+        String broker       = "tcp://test.mosquitto.org:1883";//detta är brokern, detta är testbroker från eclipse.
+        //ni kommer förmodligen behöva sätta upp en egen broker på egen server.
+        String clientId     = "client1"; // detta är bara namnet på den som gör publish
+        MemoryPersistence persistence = new MemoryPersistence();//håller kvar meddelandet utanför minnet vid issues (googla)
 
         try {
-            MqttClient sampleClient = new MqttClient(broker, clientId, persistence);
-            MqttConnectOptions connOpts = new MqttConnectOptions();
-            connOpts.setCleanSession(true);
+            MqttClient sampleClient = new MqttClient(broker, clientId, persistence);//bakar in broker, client och persistence i sampleClient
+            MqttConnectOptions connOpts = new MqttConnectOptions(); //Holds the set of options that control how the client connects to a server
+            connOpts.setCleanSession(true);//true or false, har med minne att göra (googla vad som blir bäst)
             System.out.println("Connecting to broker: "+broker);
-            sampleClient.connect(connOpts);
+            sampleClient.connect(connOpts);//connectar till en mqtt server (brokern)
             System.out.println("Connected");
 
-            MqttCallback callback = new MqttCallback(){
+            MqttCallback callback = new MqttCallback(){ //Enables an application to be notified when asynchronous events related to the client occur.
+                // Classes implementing this interface can be registered on both types of client:
+                // IMqttClient.setCallback(MqttCallback) and IMqttAsyncClient.setCallback(MqttCallback)
 
                 public void messageArrived(String topic, MqttMessage message) throws Exception {
 
-                        System.out.println(message);
                         String stringMessage = message.toString();
                         callControllerAndItsMethod(stringMessage, topic);
                 }
@@ -49,11 +47,11 @@ public class MqttSubscribe {
                     cause.printStackTrace();
                 }
             };
-            sampleClient.subscribe(topic);
-            sampleClient.subscribe("second");
-            sampleClient.setCallback(callback);
+            sampleClient.subscribe(topicOne);//första knappen
+            sampleClient.subscribe(topicTwo);//andra knappen
+            sampleClient.setCallback(callback); //Sets the callback listener to use for events that happen asynchronously.
+            //There are a number of events that listener will be notified about.
 
-            //sampleClient.disconnect();
 
         } catch(MqttException me) {
             System.out.println("reason "+me.getReasonCode());
@@ -66,8 +64,8 @@ public class MqttSubscribe {
     }
     public void callControllerAndItsMethod(final String stringMessage, String topic){
 
-        System.out.println(stringMessage + " = this is messageString");
-        if(topic.equals("first")){
+        System.out.println(stringMessage + " = this is stringMessage");
+        if(topic.equals("messageOne")){
             Platform.runLater(new Runnable(){
                 public void run() {
                     controller.changeFirstLabelNumber(stringMessage);
@@ -75,7 +73,7 @@ public class MqttSubscribe {
                 }
             });
 
-        }else if(topic.equals("second")){
+        }else if(topic.equals("messageTwo")){
             Platform.runLater(new Runnable(){
                 public void run() {
                     controller.changeSecondLabelNumber(stringMessage);
@@ -85,14 +83,5 @@ public class MqttSubscribe {
         }
 
     }
-
-
-
-
-    public String getMessageString() {
-        return messageString;
-    }
-
-
 
 }

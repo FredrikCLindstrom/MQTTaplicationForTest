@@ -1,30 +1,21 @@
-package packageTwo;/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+package packageTwo;
 
-;
 
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
+
 
 public class Controller {
-    
 
     @FXML Button plusOneFirstButton, plusOneSecondButton;
     @FXML Label label1, labelFirstNumber, labelSecondNumber;
-    @FXML
 
     int count1=0;
     String count1String;
     int count2=0;
     String count2String;
-
 
     private Main main;
 
@@ -32,10 +23,9 @@ public class Controller {
         this.main = main;
     }
 
-
     public  void firstPlusMethod(){
         count1++;
-        String topic = "first";
+        String topic = "messageOne";
         count1String=String.valueOf(count1);
         labelFirstNumber.setText(count1String);
         sendMQTTData.sendDataToFirstApp(count1String, topic);
@@ -43,7 +33,7 @@ public class Controller {
 
     public  void secondPlusMethod(){
         count2++;
-        String topic = "second";
+        String topic = "messageTwo";
         count2String=String.valueOf(count2);
         labelSecondNumber.setText(count2String);
         sendMQTTData.sendDataToFirstApp(count2String, topic);

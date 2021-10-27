@@ -27,7 +27,7 @@ public class Main extends Application{
         AnchorPane pane = loader.load();
         Controller controller = loader.getController();
         controller.setMain(this);
-        Scene scene = new Scene(pane);
+        Scene scene = new Scene(pane);                //hela denna klass är #BasicJavaFx
         primaryStage.setTitle("publisher");
         primaryStage.setScene(scene);
         primaryStage.show();

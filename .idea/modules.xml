@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MQTTApplications/first/FirstJavaFXMQTTApplication/FirstJavaFXMQTTApplication.iml" filepath="$PROJECT_DIR$/MQTTApplications/first/FirstJavaFXMQTTApplication/FirstJavaFXMQTTApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MQTTfolder.iml" filepath="$PROJECT_DIR$/.idea/MQTTfolder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MQTTApplications/first/FirstJavaFXMQTTApplication/Main/Main.iml" filepath="$PROJECT_DIR$/MQTTApplications/first/FirstJavaFXMQTTApplication/Main/Main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MQTTApplications/second/SecondJavaFXMQTTApplication/Main/Main (1) (SecondJavaFXMQTTApplication).iml" filepath="$PROJECT_DIR$/MQTTApplications/second/SecondJavaFXMQTTApplication/Main/Main (1) (SecondJavaFXMQTTApplication).iml" />
+      <module fileurl="file://$PROJECT_DIR$/MQTTApplications/second/SecondJavaFXMQTTApplication/SecondJavaFXMQTTApplication.iml" filepath="$PROJECT_DIR$/MQTTApplications/second/SecondJavaFXMQTTApplication/SecondJavaFXMQTTApplication.iml" />
+    </modules>
+  </component>
+</project>

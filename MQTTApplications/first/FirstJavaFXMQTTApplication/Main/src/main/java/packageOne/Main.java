@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package packageOne;
 
 import javafx.application.Application;
@@ -31,12 +27,11 @@ public class Main extends Application{
         primaryStage.setScene(scene);
         primaryStage.setTitle("subscriber");
 
-        primaryStage.show();
+        primaryStage.show();                          //hela denna klass är #BasicJavaFx
         controller.changeFirstLabelNumber("0");
         controller.changeSecondLabelNumber("0");
         final MqttSubscribe Ms = new MqttSubscribe(controller);
-        Ms.test();
-        System.out.println("testing");
+        Ms.executeMQTTSubscribe();
 
     }
 
