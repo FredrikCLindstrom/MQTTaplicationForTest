@@ -1,0 +1,8 @@
+{
+  "resources":{
+  "includes":[{"pattern":"\\QsampleTwo.fxml\\E"}]},
+  "bundles":[
+    {"name":"com.sun.javafx.tk.quantum.QuantumMessagesBundle"}, 
+    {"name":"org.eclipse.paho.client.mqttv3.internal.nls.logcat"}
+  ]
+}

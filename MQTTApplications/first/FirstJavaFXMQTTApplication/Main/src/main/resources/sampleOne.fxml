@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="packageOne.Controller">
+   <children>
+      <Region layoutX="32.0" layoutY="23.0" opacity="0.1" prefHeight="355.0" prefWidth="537.0" style="-fx-background-color: green;" />
+      <Label fx:id="label1" layoutX="278.0" layoutY="200.0" />
+      <Label layoutX="226.0" layoutY="182.0" text="FirstNumber">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
+      <Label layoutX="226.0" layoutY="213.0" text="SecondNumber">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
+      <Label fx:id="labelFirstNumber" layoutX="363.0" layoutY="182.0" text="0">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
+      <Label fx:id="labelSecondNumber" layoutX="363.0" layoutY="213.0" text="0">
+         <font>
+            <Font size="17.0" />
+         </font></Label>
+      <Text layoutX="126.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="detta är subscribern som lyssnar på brokern">
+         <font>
+            <Font size="20.0" />
+         </font></Text>
+      <Text layoutX="94.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Under blåa linjen styrs från andra apllikation med MQTT" wrappingWidth="412.6220703125">
+         <font>
+            <Font size="17.0" />
+         </font></Text>
+   </children>
+</AnchorPane>
