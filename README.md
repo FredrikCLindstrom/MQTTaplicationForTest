@@ -32,3 +32,5 @@ https://partners-intl.aliyun.com/help/doc-detail/146631.htm
 
 Broker Eclipse mosquitto
 https://mosquitto.org
+
+detta program fungerar i intellij för demosyfte, blir något fel vid kompilering till apk fil.
