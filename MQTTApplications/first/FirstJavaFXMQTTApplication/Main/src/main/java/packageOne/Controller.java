@@ -16,8 +16,9 @@ public class Controller {
     }
 
     public void changeFirstLabelNumber(String message){labelFirstNumber.setText(message);}
-    public void changeSecondLabelNumber(String message){
-        labelSecondNumber.setText(message);
-    }
+    public void changeSecondLabelNumber(String message){labelSecondNumber.setText(message);}
 
+    public void exitProgram(){
+        System.exit(0);
+    }
 }

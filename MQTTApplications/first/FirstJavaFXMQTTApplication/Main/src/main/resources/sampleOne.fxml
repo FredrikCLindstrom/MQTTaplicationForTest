@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Region?>
@@ -34,5 +35,6 @@
          <font>
             <Font size="17.0" />
          </font></Text>
+      <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#exitProgram" text="EXIT" />
    </children>
 </AnchorPane>

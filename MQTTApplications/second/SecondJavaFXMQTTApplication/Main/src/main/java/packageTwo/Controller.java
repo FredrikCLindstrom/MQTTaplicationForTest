@@ -38,5 +38,8 @@ public class Controller {
         labelSecondNumber.setText(count2String);
         sendMQTTData.sendDataToFirstApp(count2String, topic);
     }
+    public void exitProgram(){
+        System.exit(0);
+    }
   
 }
